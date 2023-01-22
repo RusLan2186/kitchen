@@ -866,20 +866,7 @@ body.lock {
       row-gap: rem(10);
       margin: 0;
    }
-   label {
-      display: none;
-      @media (max-width: 767.98px) {
-         display: inline-block;
-      }
-      @media (max-width: 550px) {
-         font-size: rem(12);
-      }
-      span {
-         @media (max-width: 550px) {
-            display: none;
-         }
-      }
-   }
+
    input {
       background-color: transparent;
       border: 1px solid #f5efdb;
@@ -916,6 +903,27 @@ body.lock {
    }
    option {
       background-color: transparent;
+   }
+}
+label {
+   display: none;
+   @media (max-width: 767.98px) {
+      text-transform: capitalize;
+      display: block;
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: rem(5);
+      font-size: rem(12);
+      column-gap: rem(5);
+   }
+   @media (max-width: 550px) {
+   }
+   span {
+      @media (max-width: 550px) {
+         display: none;
+      }
    }
 }
 

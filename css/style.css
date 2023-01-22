@@ -1009,24 +1009,6 @@ body {
     margin: 0;
   }
 }
-.form-table__body label {
-  display: none;
-}
-@media (max-width: 767.98px) {
-  .form-table__body label {
-    display: inline-block;
-  }
-}
-@media (max-width: 550px) {
-  .form-table__body label {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 550px) {
-  .form-table__body label span {
-    display: none;
-  }
-}
 .form-table__body input {
   background-color: transparent;
   border: 1px solid #f5efdb;
@@ -1070,6 +1052,29 @@ body {
 }
 .form-table__select option {
   background-color: transparent;
+}
+
+label {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  label {
+    text-transform: capitalize;
+    display: block;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.3125rem;
+    font-size: 0.75rem;
+    -moz-column-gap: 0.3125rem;
+         column-gap: 0.3125rem;
+  }
+}
+@media (max-width: 550px) {
+  label span {
+    display: none;
+  }
 }
 
 .input-data {
