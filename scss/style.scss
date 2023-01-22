@@ -139,6 +139,9 @@ body.lock {
 .screen {
    flex: 1 0 100%;
    position: relative;
+   @media (max-width: 991.98px) {
+      flex: 0 0 80%;
+   }
 }
 
 .header__burger {
@@ -633,10 +636,13 @@ body.lock {
    padding-top: rem(120);
    position: relative;
    @media (max-width: 599.98px) {
-      padding-top: rem(30);
+      padding: rem(30) 0;
    }
 }
 .screen {
+   @media (max-width: 599.98px) {
+      flex: 0 0 100%;
+   }
 }
 .abouts__container {
 }
@@ -759,6 +765,9 @@ body.lock {
    align-items: center;
    background: #0c0b08 url(../img/decor/chas.png) right rem(100) no-repeat;
    justify-content: center;
+   @media (max-width: 767.98px) {
+      padding-bottom: rem(50);
+   }
 }
 .screen {
 }
@@ -781,8 +790,9 @@ body.lock {
    }
    @media (max-width: 875.98px) {
       min-width: rem(620);
-      width: 0;
+      width: 0%;
       padding: rem(20) 0;
+      border: none;
    }
    @media (max-width: 559.98px) {
       min-width: rem(370);
@@ -790,6 +800,9 @@ body.lock {
 }
 .table__header {
    margin-bottom: rem(64);
+   @media (max-width: 767.98px) {
+      margin-bottom: rem(30);
+   }
 }
 .table__label {
    font-family: "Cormorant Upright";
@@ -869,8 +882,8 @@ body.lock {
    color: $grey;
    padding: 0 rem(16);
    min-height: rem(60);
-   display: flex;
-   justify-content: space-around;
+
+   width: 100%;
    cursor: pointer;
    &:focus {
       border: 1px solid $gold;
@@ -908,14 +921,15 @@ input[type="time" i] {
 }
 // ................................................... MENU........................................................
 .menu {
-   background: url(../img/decor/chas.png) 10% 0 no-repeat, url(../img/menu/01.png) center repeat;
+   background: url(../img/decor/chas.png) 0% 0 no-repeat, url(../img/menu/01.png) center / cover repeat;
    // background-size: cover;
    // background-position: center;
    display: flex;
    align-items: center;
-   @media (max-width: 767.98px) {
+   padding-top: rem(100);
+   @media (max-width: 991.98px) {
       align-items: flex-start;
-      padding-top: rem(10);
+      padding-top: rem(30);
    }
 }
 
@@ -935,6 +949,7 @@ input[type="time" i] {
 .menu__tabs_navigation {
    flex: 0 1 40%;
    display: block;
+   align-self: center;
    @media (max-width: 991.98px) {
       display: flex;
       column-gap: rem(20);
@@ -961,6 +976,7 @@ input[type="time" i] {
    &--activee {
       text-decoration: underline;
       transition: 0.3s all ease 0s;
+      color: $gold;
    }
 }
 
@@ -1009,8 +1025,11 @@ input[type="time" i] {
 .special__container {
 }
 .special__header {
-   padding-top: adaptive(80, 82);
+   padding-top: rem(80);
    margin-bottom: adaptive(20, 34);
+   @media (max-width: 767.98px) {
+      padding-top: rem(50);
+   }
 }
 .special__label {
    text-align: center;
@@ -1299,7 +1318,7 @@ input[type="time" i] {
 }
 .customers__header {
    @media (max-width: 991.98px) {
-      padding-top: rem(100);
+      padding-top: rem(50);
    }
    margin-bottom: adaptive(20, 64);
 }
@@ -1325,6 +1344,7 @@ input[type="time" i] {
    column-gap: rem(32);
    @media (max-width: 991.98px) {
       grid-template-columns: repeat(1, 1fr);
+      row-gap: rem(30);
    }
 }
 .customers__item {
@@ -1525,6 +1545,9 @@ input[type="time" i] {
    text-align: center;
    padding-top: rem(65);
    margin-bottom: adaptive(20, 40);
+   @media (max-width: 767.98px) {
+      padding-top: rem(30);
+   }
 }
 .blogs__label {
    margin-bottom: rem(15);
@@ -1628,6 +1651,9 @@ input[type="time" i] {
    display: flex;
    flex-direction: column;
    justify-content: center;
+   @media (max-width: 767.98px) {
+      padding-top: rem(30);
+   }
 }
 
 .gallery__container {
@@ -1713,6 +1739,9 @@ input[type="time" i] {
    justify-content: center;
 }
 .screen {
+   @media (max-width: 767.98px) {
+      flex: 0 0 60%;
+   }
 }
 .subscribe__container {
 }
@@ -1820,7 +1849,7 @@ input[type="time" i] {
    flex: 1 1 auto;
    padding-top: rem(200);
    @media (max-width: 767.98px) {
-      padding-top: rem(50);
+      padding-top: rem(20);
    }
 }
 .footer-top {
@@ -1834,7 +1863,7 @@ input[type="time" i] {
    gap: rem(20);
    @media (max-width: 767.98px) {
       flex-direction: column;
-      row-gap: rem(30);
+      row-gap: rem(20);
    }
 }
 .footer-top__contacts {
