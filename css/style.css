@@ -363,6 +363,11 @@ body {
     min-height: 80px;
   }
 }
+@media (max-width: 767.98px) {
+  .header__container {
+    min-height: 60px;
+  }
+}
 
 .header__logo {
   font-family: "Cormorant Upright";
@@ -395,6 +400,16 @@ body {
     transition: all 0.6s ease 0s;
     overflow: auto;
     margin: 0;
+  }
+  .menu-header:before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 3;
   }
 }
 .menu-header.open-menu {
@@ -888,36 +903,28 @@ body {
   }
 }
 
-.table__body {
-  padding: 3rem 0;
-  background: #0c0c0c;
+.table__container {
   width: 85.25rem;
-  min-height: 29.125rem;
+}
+@media (max-width: 875.98px) {
+  .table__container {
+    max-width: 1710px;
+  }
+}
+
+.table__body {
+  padding: 3rem;
+  background: #0c0c0c;
+  width: 100%;
+  max-width: 85.25rem;
   background: #0c0b08;
   border: 1px solid rgba(220, 202, 135, 0.2);
   box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
 }
-@media (max-width: 1399.98px) {
+@media (max-width: 991.98px) {
   .table__body {
-    width: 65.625rem;
-  }
-}
-@media (max-width: 1099.98px) {
-  .table__body {
-    width: 53.75rem;
-  }
-}
-@media (max-width: 875.98px) {
-  .table__body {
-    min-width: 38.75rem;
-    width: 0%;
-    padding: 1.25rem 0;
     border: none;
-  }
-}
-@media (max-width: 559.98px) {
-  .table__body {
-    min-width: 23.125rem;
+    padding: 1.25rem 0.625rem;
   }
 }
 
@@ -998,7 +1005,26 @@ body {
 }
 @media (max-width: 875.98px) {
   .form-table__body {
-    row-gap: 1.25rem;
+    row-gap: 0.625rem;
+    margin: 0;
+  }
+}
+.form-table__body label {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .form-table__body label {
+    display: inline-block;
+  }
+}
+@media (max-width: 550px) {
+  .form-table__body label {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 550px) {
+  .form-table__body label span {
+    display: none;
   }
 }
 .form-table__body input {
@@ -1015,7 +1041,7 @@ body {
 }
 @media (max-width: 875.98px) {
   .form-table__body input {
-    grid-column: 1/4;
+    grid-column: 1/10;
   }
 }
 
@@ -1027,13 +1053,19 @@ body {
   min-height: 3.75rem;
   width: 100%;
   cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  display: inline-block;
+  background: url(../img/icons/gal.svg) 95%/5% no-repeat;
 }
 .form-table__select:focus {
   border: 1px solid #dcca87;
 }
 @media (max-width: 875.98px) {
   .form-table__select {
-    grid-column: 1/4;
+    grid-column: 1/10;
   }
 }
 .form-table__select option {
@@ -1042,6 +1074,23 @@ body {
 
 .input-data {
   cursor: pointer;
+}
+@media (max-width: 767.98px) {
+  .input-data {
+    background: url(../img/icons/gal.svg) 95%/5% no-repeat;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .input-time {
+    background: url(../img/icons/gal.svg) 95%/5% no-repeat;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
 }
 
 input[type=time i] {
@@ -1060,7 +1109,7 @@ input[type=time i] {
 }
 @media (max-width: 875.98px) {
   .button {
-    grid-column: 1/4;
+    grid-column: 1/10;
   }
 }
 
@@ -1074,6 +1123,7 @@ input[type=time i] {
   .menu {
     align-items: flex-start;
     padding-top: 1.875rem;
+    background: url(../img/menu/01.png) center/cover repeat;
   }
 }
 
@@ -1189,7 +1239,7 @@ input[type=time i] {
 }
 
 .special__header {
-  padding-top: 5rem;
+  padding-top: 6.25rem;
   margin-bottom: calc(20px + (34 - 20) * ((100vw - 320px) / (1710 - 320)));
 }
 @media (max-width: 767.98px) {
@@ -1618,6 +1668,7 @@ input[type=time i] {
   .laurels {
     padding-top: calc(40px + (70 - 40) * ((100vw - 320px) / (1710 - 320)));
     padding-bottom: 1.875rem;
+    display: block;
   }
 }
 
@@ -1631,6 +1682,9 @@ input[type=time i] {
   .laurels__body {
     flex-direction: column;
     row-gap: 1.25rem;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    width: 100%;
   }
 }
 
@@ -1690,14 +1744,13 @@ input[type=time i] {
 
 .laurels__image {
   width: 30.1875rem;
-  height: 100%;
   position: relative;
   padding-bottom: 50%;
 }
 @media (max-width: 991.98px) {
   .laurels__image {
     width: 100%;
-    padding-bottom: 80%;
+    padding-bottom: 90%;
   }
 }
 .laurels__image::after {
@@ -1708,6 +1761,11 @@ input[type=time i] {
   position: absolute;
   bottom: 0;
   left: -8.125rem;
+}
+@media (max-width: 1150) {
+  .laurels__image::after {
+    opacity: 0.7;
+  }
 }
 @media (max-width: 767.98px) {
   .laurels__image::after {
@@ -1761,9 +1819,22 @@ input[type=time i] {
 .blogs__items {
   display: flex;
   margin-bottom: 1.25rem;
-  gap: 0.9375rem;
+  -moz-column-gap: 0.9375rem;
+       column-gap: 0.9375rem;
+  row-gap: 1.5625rem;
   justify-content: center;
-  flex-wrap: wrap;
+}
+@media (max-width: 990px) {
+  .blogs__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 700px) {
+  .blogs__items {
+    grid-template-columns: 1fr;
+  }
 }
 
 .item-blogs {
@@ -1949,8 +2020,8 @@ input[type=time i] {
 .subscribe {
   background: #0c0b08;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 767.98px) {
@@ -1959,28 +2030,22 @@ input[type=time i] {
   }
 }
 
+.subscribe__container {
+  width: 85.25rem;
+}
+
 .subscribe__body {
   padding: 3rem 0;
   background: #0c0c0c;
-  width: 85.25rem;
+  width: 100%;
+  max-width: 85.25rem;
   background: #0c0b08;
   border: 1px solid rgba(220, 202, 135, 0.2);
   box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
 }
-@media (max-width: 1399.98px) {
+@media (max-width: 991.98px) {
   .subscribe__body {
-    width: 65.625rem;
-  }
-}
-@media (max-width: 1099.98px) {
-  .subscribe__body {
-    width: 50rem;
-  }
-}
-@media (max-width: 829.98px) {
-  .subscribe__body {
-    width: 100%;
-    padding: 1.25rem 0;
+    border: none;
   }
 }
 
@@ -2035,7 +2100,7 @@ input[type=time i] {
     gap: 0.625rem;
   }
 }
-@media (max-width: 829.98px) {
+@media (max-width: 875px) {
   .subscribe__form {
     display: flex;
     flex-direction: column;
@@ -2054,14 +2119,14 @@ input[type=time i] {
 .form-subscribe__input:focus {
   border: 1px solid #dcca87;
 }
-@media (max-width: 829.98px) {
+@media (max-width: 875px) {
   .form-subscribe__input {
     width: 100%;
     padding: 1rem 0 1rem 1.25rem;
   }
 }
 
-@media (max-width: 829.98px) {
+@media (max-width: 875px) {
   .subscribe__btn {
     width: 100%;
   }

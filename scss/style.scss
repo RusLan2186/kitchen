@@ -310,6 +310,9 @@ body.lock {
    @media (max-width: 991.98px) {
       min-height: 80px;
    }
+   @media (max-width: 767.98px) {
+      min-height: 60px;
+   }
 }
 .header__logo {
    font-family: "Cormorant Upright";
@@ -341,6 +344,16 @@ body.lock {
       transition: all 0.6s ease 0s;
       overflow: auto;
       margin: 0;
+      &:before {
+         content: "";
+         position: fixed;
+         width: 100%;
+         height: 60px;
+         top: 0;
+         left: 0;
+         background-color: #000000;
+         z-index: 3;
+      }
    }
    &.open-menu {
       left: 0;
@@ -772,30 +785,23 @@ body.lock {
 .screen {
 }
 .table__container {
+   width: rem(1364);
+   @media (max-width: 875.98px) {
+      max-width: 1710px;
+   }
 }
 
 .table__body {
-   padding: rem(48) 0;
+   padding: rem(48);
    background: #0c0c0c;
-   width: rem(1364);
-   min-height: rem(466);
+   width: 100%;
+   max-width: rem(1364);
    background: #0c0b08;
    border: 1px solid rgba(220, 202, 135, 0.2);
    box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
-   @media (max-width: 1399.98px) {
-      width: rem(1050);
-   }
-   @media (max-width: 1099.98px) {
-      width: rem(860);
-   }
-   @media (max-width: 875.98px) {
-      min-width: rem(620);
-      width: 0%;
-      padding: rem(20) 0;
+   @media (max-width: 991.98px) {
       border: none;
-   }
-   @media (max-width: 559.98px) {
-      min-width: rem(370);
+      padding: rem(20) rem(10);
    }
 }
 .table__header {
@@ -857,9 +863,23 @@ body.lock {
    row-gap: rem(64);
    margin: 0 rem(32);
    @media (max-width: 875.98px) {
-      row-gap: rem(20);
+      row-gap: rem(10);
+      margin: 0;
    }
-
+   label {
+      display: none;
+      @media (max-width: 767.98px) {
+         display: inline-block;
+      }
+      @media (max-width: 550px) {
+         font-size: rem(12);
+      }
+      span {
+         @media (max-width: 550px) {
+            display: none;
+         }
+      }
+   }
    input {
       background-color: transparent;
       border: 1px solid #f5efdb;
@@ -872,7 +892,7 @@ body.lock {
          border: 1px solid $gold;
       }
       @media (max-width: 875.98px) {
-         grid-column: 1 / 4;
+         grid-column: 1 / 10;
       }
    }
 }
@@ -882,14 +902,17 @@ body.lock {
    color: $grey;
    padding: 0 rem(16);
    min-height: rem(60);
-
    width: 100%;
    cursor: pointer;
+   appearance: none;
+   position: relative;
+   display: inline-block;
+   background: url(../img/icons/gal.svg) 95% / 5% no-repeat;
    &:focus {
       border: 1px solid $gold;
    }
    @media (max-width: 875.98px) {
-      grid-column: 1 / 4;
+      grid-column: 1 / 10;
    }
    option {
       background-color: transparent;
@@ -898,8 +921,16 @@ body.lock {
 
 .input-data {
    cursor: pointer;
+   @media (max-width: 767.98px) {
+      background: url(../img/icons/gal.svg) 95% / 5% no-repeat;
+      appearance: none;
+   }
 }
 .input-time {
+   @media (max-width: 767.98px) {
+      background: url(../img/icons/gal.svg) 95% / 5% no-repeat;
+      appearance: none;
+   }
 }
 input[type="time" i] {
    align-items: center;
@@ -916,20 +947,19 @@ input[type="time" i] {
    text-align: center;
    margin: 0 auto;
    @media (max-width: 875.98px) {
-      grid-column: 1 / 4;
+      grid-column: 1 / 10;
    }
 }
 // ................................................... MENU........................................................
 .menu {
    background: url(../img/decor/chas.png) 0% 0 no-repeat, url(../img/menu/01.png) center / cover repeat;
-   // background-size: cover;
-   // background-position: center;
    display: flex;
    align-items: center;
    padding-top: rem(100);
    @media (max-width: 991.98px) {
       align-items: flex-start;
       padding-top: rem(30);
+      background: url(../img/menu/01.png) center / cover repeat;
    }
 }
 
@@ -1011,21 +1041,18 @@ input[type="time" i] {
 // ................................................SPECIAL.......................................................................
 .special {
    background: #0c0b08;
-
    display: flex;
    flex-direction: column;
    justify-content: center;
    padding-bottom: adaptive(30, 152);
-   // @media (max-width: 899.98px) {
-   //    background: #0c0b08 url(../img/special/01.png) center no-repeat;
-   // }
 }
+
 .screen {
 }
 .special__container {
 }
 .special__header {
-   padding-top: rem(80);
+   padding-top: rem(100);
    margin-bottom: adaptive(20, 34);
    @media (max-width: 767.98px) {
       padding-top: rem(50);
@@ -1130,10 +1157,6 @@ input[type="time" i] {
 
 .special__image {
    width: rem(412);
-   // flex: 1 0 412px;
-   // max-width: 412px;
-   // width: 100%;
-   // height: rem(659);
    padding-bottom: 38%;
    position: relative;
    @media (max-width: 899.98px) {
@@ -1183,21 +1206,8 @@ input[type="time" i] {
    text-transform: capitalize;
    line-height: 1.3;
    position: relative;
-
-   // &::after {
-   //    content: "";
-   //    width: rem(119);
-   //    height: rem(1);
-   //    background-color: $gold;
-   //    position: absolute;
-   //    left: rem(180);
-   //    top: rem(17);
-   //    @media (max-width: 1199.98px) {
-   //       left: rem(180);
-   //       width: rem(60);
-   //    }
-   // }
 }
+
 .cocktails-item__price {
    font-weight: 700;
    font-size: rem(23);
@@ -1428,6 +1438,7 @@ input[type="time" i] {
    @media (max-width: 991.98px) {
       padding-top: adaptive(40, 70);
       padding-bottom: rem(30);
+      display: block;
    }
 }
 .screen {
@@ -1441,6 +1452,8 @@ input[type="time" i] {
    @media (max-width: 991.98px) {
       flex-direction: column;
       row-gap: rem(20);
+      column-gap: 0;
+      width: 100%;
    }
 }
 .laurels__info {
@@ -1497,12 +1510,11 @@ input[type="time" i] {
 }
 .laurels__image {
    width: rem(483);
-   height: 100%;
    position: relative;
    padding-bottom: 50%;
    @media (max-width: 991.98px) {
       width: 100%;
-      padding-bottom: 80%;
+      padding-bottom: 90%;
    }
    &::after {
       content: "";
@@ -1512,10 +1524,10 @@ input[type="time" i] {
       position: absolute;
       bottom: 0;
       left: rem(-130);
+      @media (max-width: 1150) {
+         opacity: 0.7;
+      }
       @media (max-width: 767.98px) {
-         // width: 60%;
-         // height: 60%;
-         // left: 0;
          display: none;
       }
    }
@@ -1532,9 +1544,6 @@ input[type="time" i] {
 
 .blogs {
    background: #0c0b08 url(../img/decor/chas.png) 90% 95% no-repeat;
-   // display: flex;
-   // flex-direction: column;
-   // justify-content: center;
    padding-bottom: rem(40);
 }
 .screen {
@@ -1560,9 +1569,17 @@ input[type="time" i] {
 .blogs__items {
    display: flex;
    margin-bottom: rem(20);
-   gap: rem(15);
+   column-gap: rem(15);
+   row-gap: rem(25);
    justify-content: center;
-   flex-wrap: wrap;
+   @media (max-width: 990px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: flex-start;
+   }
+   @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+   }
 }
 .blogs__item {
 }
@@ -1735,8 +1752,9 @@ input[type="time" i] {
 .subscribe {
    background: #0c0b08;
    display: flex;
-   flex-direction: column;
+   // flex-direction: column;
    justify-content: center;
+   align-items: center;
 }
 .screen {
    @media (max-width: 767.98px) {
@@ -1744,28 +1762,18 @@ input[type="time" i] {
    }
 }
 .subscribe__container {
+   width: rem(1364);
 }
 .subscribe__body {
    padding: rem(48) 0;
    background: #0c0c0c;
-
-   width: rem(1364);
-
-   // min-height: rem(466);
+   width: 100%;
+   max-width: rem(1364);
    background: #0c0b08;
    border: 1px solid rgba(220, 202, 135, 0.2);
    box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
-   @media (max-width: 1399.98px) {
-      width: rem(1050);
-   }
-   @media (max-width: 1099.98px) {
-      width: rem(800);
-   }
-   @media (max-width: 829.98px) {
-      // min-width: rem(400);
-      width: 100%;
-      padding: rem(20) 0;
-      // width: 0;
+   @media (max-width: 991.98px) {
+      border: none;
    }
 }
 .subscribe__header {
@@ -1799,13 +1807,14 @@ input[type="time" i] {
    // margin: 0 auto;
    display: grid;
    grid-template-columns: rem(635) rem(129);
+   // grid-template-columns: 1fr 1fr;
    gap: rem(32);
    justify-content: center;
    @media (max-width: 1099.98px) {
       grid-template-columns: rem(400) rem(129);
       gap: rem(10);
    }
-   @media (max-width: 829.98px) {
+   @media (max-width: 875px) {
       display: flex;
       flex-direction: column;
       row-gap: rem(10);
@@ -1823,13 +1832,13 @@ input[type="time" i] {
    &:focus {
       border: 1px solid $gold;
    }
-   @media (max-width: 829.98px) {
+   @media (max-width: 875px) {
       width: 100%;
       padding: rem(16) 0 rem(16) rem(20);
    }
 }
 .subscribe__btn {
-   @media (max-width: 829.98px) {
+   @media (max-width: 875px) {
       width: 100%;
    }
 }
